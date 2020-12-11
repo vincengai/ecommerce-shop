@@ -6,18 +6,18 @@ import {commerce} from './lib/commerce';
 const App = () => {
     const [products, setProducts] = useState([]);
 
-  const fetchProductsAPI = async () => {
+    const fetchProducts = async () => {
     const { data } = await commerce.products.list();
 
     setProducts(data);
-  };
+    };
 
 
     useEffect( () => {
-        fetchProductsAPI();
+        fetchProducts();
     }, [])
 
-    // console.log(products, 'my products from commerce.js')
+    console.log(products, 'my products from commerce.js')
     return (
         <div>
             <Navbar />
